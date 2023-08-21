@@ -11,8 +11,8 @@
 class Movie < ApplicationRecord
   belongs_to :client, optional: true
 
-  # validates :name, presence: true, length: { maximum: 255 }
-  # validates :client, presence: true
+  validates :name, presence: true, length: { maximum: 255 }
+  validates :client, presence: true
 
   def to_s
     self.name
