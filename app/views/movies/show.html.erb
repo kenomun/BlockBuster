@@ -1,10 +1,20 @@
-<p style="color: green"><%= notice %></p>
+<h1>Película</h1>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <p class="text-success"><%= notice %></p>
+      
+      <%= render "movie", movie: @movie, show_button: false %>
 
-<%= render @movie %>
-
-<div>
-  <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
-  <%= link_to "Back to movies", movies_path %>
-
-  <%= button_to "Destroy this movie", @movie, method: :delete %>
+      <div class="mt-3">
+        <div class="btn-group">
+          <%= link_to "Editar Película", edit_movie_path(@movie), class: "btn btn-outline-warning", style: "margin-right: 8px;" %>
+          <%= button_to "Eliminar película", @movie, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+        </div>
+      </div>
+    </div>
+  </div>
+        <%= link_to "Volver a lista de películas", movies_path, class: "btn btn-outline-secondary mr-2 mt-3" %>
 </div>
+
+

@@ -1,10 +1,20 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @client %>
+<h1>Cliente</h1>
 
-<div>
-  <%= link_to "Edit this client", edit_client_path(@client) %> |
-  <%= link_to "Back to clients", clients_path %>
-
-  <%= button_to "Destroy this client", @client, method: :delete %>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%= @client.name %></h5>
+      <p class="card-text">Edad: <%= @client.age %></p>
+      <p class="card-text">Película: <%= @client.movies.last %></p>
+      <div class="btn-group">
+        <%= link_to "Editar", edit_client_path(@client), class: "btn btn-outline-warning btn-sm", style: "margin-right: 8px;" %>
+        <%= button_to "Eliminar", @client, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger btn-sm " %>
+      </div>
+    </div>
+  </div>
+  <%= link_to "Volver a lista de clientes", clients_path, class: "btn btn-secondary mt-3" %>
 </div>
+
+

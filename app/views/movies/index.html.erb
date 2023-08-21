@@ -1,13 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="container">
-  <h1>Movies</h1>
-  <%= link_to "New movie", new_movie_path %>
-  <div id="movies">
-    <div class="row">
-      <% @movies.each do |movie| %>
-        <%= render movie %>
-      <% end %>
+  <h1>Películas</h1>
+  <%= link_to "Agregar película", new_movie_path, class: "btn btn-outline-primary mb-3" %>
+  
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <% @movies.each do |movie| %>
+          <div class="col-4 py-2">
+            <%= render "movie", movie: movie, show_button: true %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
+
+
+

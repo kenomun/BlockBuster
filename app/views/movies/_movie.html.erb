@@ -1,9 +1,9 @@
-
-  <div class="col-4 py-2">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><%= movie.name %></h5>
-        <%= link_to "Show this movie", movie, class: "btn btn-primary" %>
-      </div>
-    </div>
+<div class="card-movie">
+  <div class="card-body">
+    <h5 class="card-title"><%= movie.name %></h5>
+    <% if show_button %>
+      <%= link_to "Mostrar película", movie, class: "btn btn-outline-info" %>
+    <% end %>
   </div>
+</div>
+

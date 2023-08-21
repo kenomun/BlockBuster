@@ -1,26 +1,31 @@
 <p style="color: green"><%= notice %></p>
 
 <div class="container">
-  <h1>Clients</h1>
+  <h1>Clientes</h1>
 
-  <%= link_to "New client", new_client_path %>
+  <%= link_to "Agregar cliente", new_client_path, class: "btn btn-outline-primary mb-3" %>
 
-  <div id="clients">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Age</th>
-          <th scope="col">Movie</th>
-          <th scope="col" colspan="3"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @clients.each do |client| %>
-          <%= render client %>
-        <% end %>
-      </tbody>
-    </table>
+  <div class="card">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Movie</th>
+            <th scope="col" colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @clients.each do |client| %>
+            <%= render partial: "client", locals: { client: client, is_show_view: false } %>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
+
+
+
